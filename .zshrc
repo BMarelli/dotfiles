@@ -109,10 +109,19 @@ alias python="python3"
 
 export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 
-[ -f "/Users/bautistamarelli/.ghcup/env" ] && source "/Users/bautistamarelli/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 # opam configuration
-[[ ! -r /Users/bautistamarelli/.opam/opam-init/init.zsh ]] || source /Users/bautistamarelli/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # zoxide
 eval "$(zoxide init zsh)"
