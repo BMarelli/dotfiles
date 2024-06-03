@@ -7,7 +7,6 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.completion.spell,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
 			},
 		})
 		vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {desc = "format buffer"})
