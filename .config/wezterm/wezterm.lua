@@ -17,8 +17,6 @@ config.font = wezterm.font({
   harfbuzz_features = { "ss01", "calt" },
 })
 
-config.font_size = 14
-
 -- performance issues: https://github.com/wez/wezterm/issues/2669
 config.window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"
 -- wayland issues: https://github.com/wez/wezterm/issues/5103
@@ -38,11 +36,13 @@ config.send_composed_key_when_right_alt_is_pressed = false
 local mod = "CTRL"
 if is_linux then
   mod = "CTRL"
+  config.font_size = 12
   config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1500 }
 end
 
 if is_macos then
   mod = "OPT"
+  config.font_size = 14
   config.leader = { key = " ", mods = "OPT", timeout_milliseconds = 1500 }
 end
 
