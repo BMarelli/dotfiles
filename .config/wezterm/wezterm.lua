@@ -36,7 +36,7 @@ config.send_composed_key_when_right_alt_is_pressed = false
 local mod = "CTRL"
 if is_linux then
   mod = "CTRL"
-  config.font_size = 12
+  config.font_size = 11
   config.leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1500 }
 end
 
