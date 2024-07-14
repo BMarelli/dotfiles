@@ -55,15 +55,34 @@ return {
   {
     "mfussenegger/nvim-dap",
     optional = true,
-
     dependencies = {
       {
-        "jay-babu/mason-nvim-dap.nvim",
-
-        opts = function(_, opts)
-          opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "haskell" })
-        end,
+        "williamboman/mason.nvim",
+        opts = { ensure_installed = { "haskell-debug-adapter" } },
       },
     },
+    config = function()
+      local dap = require("dap")
+      dap.adapters.haskell = {
+        type = "executable",
+        command = "haskell-debug-adapter",
+      }
+      dap.configurations.haskell = {
+        {
+          type = "haskell",
+          request = "launch",
+          name = "Debug",
+          workspace = "${workspaceFolder}",
+          startup = "${file}",
+          stopOnEntry = true,
+          logLevel = "DEBUG",
+          logFile = vim.fn.stdpath("data") .. "/haskell-dap.log",
+          ghciPrompt = "λ: ",
+          ghciInitialPrompt = "λ: ",
+          ghciCmd = "stack ghci",
+          ghciEnv = vim.empty_dict(),
+        },
+      }
+    end
   },
 }

@@ -112,8 +112,6 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 
 export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -128,3 +126,5 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
