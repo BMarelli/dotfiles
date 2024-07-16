@@ -10,6 +10,7 @@ return {
       vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "find recent files" })
       vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "find string in file" })
     end,
+
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
@@ -19,6 +20,13 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {}
           }
+        },
+        defaults = {
+          layout_config = {
+            width = { padding = 0 },
+            height = { padding = 0 },
+            preview_width = 0.65,
+          },
         }
       }
       require("telescope").load_extension("ui-select")
