@@ -46,8 +46,8 @@ return {
       servers = {
         omnisharp = {
           handlers = {
-            ["textDocument/definition"] = function(...)
-              return require("omnisharp_extended").handler(...)
+            ["textDocument/definition"] = function()
+              return require("omnisharp_extended").handler()
             end,
           },
           keys = {
