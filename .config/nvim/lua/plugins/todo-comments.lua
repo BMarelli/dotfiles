@@ -5,11 +5,11 @@ return {
 
     event = "BufReadPost",
 
-  -- stylua: ignore
-  keys = {
-    { "]t", function () require("todo-comments").jump_next() end, desc = "next todo" },
-    { "[t", function () require("todo-comments").jump_prev() end, desc = "prev todo" },
-  },
+    -- stylua: ignore
+    keys = {
+      { "]t", function() require("todo-comments").jump_next() end,  desc = "next todo" },
+      { "[t", function() require("todo-comments").jump_prev() end,  desc = "prev todo" },
+    },
 
     opts = {},
   },
