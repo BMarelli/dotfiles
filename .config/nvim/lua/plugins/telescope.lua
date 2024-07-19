@@ -2,7 +2,10 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
     config = function()
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "find files" })
@@ -21,15 +24,25 @@ return {
             require("telescope.themes").get_dropdown {}
           }
         },
+
         defaults = {
           layout_config = {
+            prompt_position = "top",
+            horizontal = { preview_width = 0.65 },
             width = { padding = 0 },
             height = { padding = 0 },
             preview_width = 0.65,
           },
-        }
+        },
+
+        pickers = {
+          git_files = {
+            show_untracked = true,
+          },
+        },
       }
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("fzf")
     end
   }
 }
