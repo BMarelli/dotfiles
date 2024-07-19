@@ -41,6 +41,10 @@ return {
         telescope.load_extension("hoogle")
       end
     end,
+
+    keys = {
+      { "<leader>fh", "<cmd>Telescope hoogle<cr>", desc = "search hoogle" },
+    }
   },
   {
     "nvim-neotest/neotest",
