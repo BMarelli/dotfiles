@@ -1,9 +1,11 @@
 ---@class util
 ---@field lsp util.lsp
+---@field git util.lazygit
 ---@field plugin util.plugin
 ---@field terminal util.terminal
 local M = {
   lsp = require("util.lsp"),
+  lazygit = require("util.lazygit"),
   plugin = require("util.plugin"),
   terminal = require("util.terminal"),
 }

@@ -14,3 +14,6 @@ vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "close the curre
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "goes to next tab" })
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "goes to previous tab" })
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "open current file in a new tab" })
+
+-- git
+vim.keymap.set("n", "<leader>lg", util.lazygit.lazygit, { desc = "lazygit" })

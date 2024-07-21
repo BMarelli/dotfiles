@@ -28,11 +28,14 @@ return {
         defaults = {
           layout_config = {
             prompt_position = "top",
+
             horizontal = { preview_width = 0.65 },
             width = { padding = 0 },
             height = { padding = 0 },
             preview_width = 0.65,
           },
+
+          sorting_strategy = "ascending",
         },
 
         pickers = {
