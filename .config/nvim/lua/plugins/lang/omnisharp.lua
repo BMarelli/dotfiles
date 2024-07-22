@@ -50,15 +50,12 @@ return {
               return require("omnisharp_extended").handler()
             end,
           },
-          keys = {
-            {
-              "gd",
-              function()
-                require("omnisharp_extended").telescope_lsp_definitions()
-              end,
-              desc = "Goto Definition",
-            },
-          },
+          keys = function()
+            local omnisharp = require("omnisharp_extended")
+            return {
+              { "gd", omnisharp.telescope_lsp_definitions, desc = "Go to definition" }
+            }
+          end,
           enable_roslyn_analyzers = true,
           organize_imports_on_format = true,
           enable_import_completion = true,
