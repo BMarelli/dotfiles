@@ -13,6 +13,13 @@ return {
         telescope.load_extension("ht")
       end
     end,
+    keys = function()
+      local ht = require("haskell-tools")
+      return {
+        { "<leader>ht", ht.hoogle.hoogle_signature, desc = "search hoogle signature" },
+        { "<leader>ea", ht.lsp.buf_eval_all,        desc = "evaluate all" },
+      }
+    end
   },
   {
     "neovim/nvim-lspconfig",
