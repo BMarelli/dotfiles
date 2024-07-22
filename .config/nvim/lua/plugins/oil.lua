@@ -6,7 +6,7 @@ return {
     },
 
     keys = {
-      { "<leader>e", "<cmd>Oil<CR>", desc = "Open file explorer" },
+      { "<leader>-", "<cmd>Oil<CR>", desc = "Open file explorer" },
     },
 
     opts = {
