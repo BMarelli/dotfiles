@@ -1,6 +1,11 @@
 local lsp = vim.g.lazyvim_python_lsp or "pyright"
 local ruff = vim.g.lazyvim_python_ruff or "ruff_lsp"
 
+-- indentation
+vim.opt_local.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -85,7 +90,7 @@ return {
     cmd = "VenvSelect",
     opts = function()
       require("venv-selector").setup({
-        path= "~/.virtualenvs",
+        path = "~/.virtualenvs",
       })
     end,
     keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
