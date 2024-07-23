@@ -17,9 +17,9 @@ return {
       local ht = require("haskell-tools")
       return {
         { "<leader>ht", ht.hoogle.hoogle_signature, desc = "search hoogle signature" },
-        { "<leader>he", ht.lsp.buf_eval_all,        desc = "evaluate all" },
+        { "<leader>he", ht.lsp.buf_eval_all, desc = "evaluate all" },
       }
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -51,7 +51,7 @@ return {
 
     keys = {
       { "<leader>fh", "<cmd>Telescope hoogle<cr>", desc = "search hoogle" },
-    }
+    },
   },
   {
     "nvim-neotest/neotest",
@@ -94,6 +94,6 @@ return {
           ghciEnv = vim.empty_dict(),
         },
       }
-    end
+    end,
   },
 }

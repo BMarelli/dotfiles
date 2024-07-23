@@ -1,25 +1,40 @@
-vim.opt.cursorline = true
--- tabs and indentation
-vim.cmd("set expandtab")
-vim.cmd("set number")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.opt.autoindent = true
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- clipboard
+vim.opt.clipboard = "unnamedplus"
+
+-- undofile
+vim.opt.undofile = true
+
+-- disable text wrap
+vim.opt.wrap = false
+
+-- line numbers
+vim.opt.number = true
 vim.opt.relativenumber = true
-vim.cmd('let g:netrw_liststyle = 3')
--- life caring shortcuts
-vim.opt.clipboard:append("unnamedplus") -- use system clipboard
-vim.cmd("inoremap [ []<Left>")
-vim.cmd("inoremap ( ()<Left>")
-vim.cmd("inoremap < <><Left>")
-vim.cmd("inoremap ' ''<Left>")
-vim.cmd("inoremap { {}<Left>")
-vim.cmd("nmap <S-Up> v<Up>")
-vim.cmd("nmap <S-Down> v<Down>")
-vim.cmd("nmap <S-Left> v<Left>")
-vim.cmd("nmap <S-Right> v<Right>")
-vim.cmd("vmap <S-Up> <Up>")
-vim.cmd("vmap <S-Down> <Down>")
-vim.cmd("vmap <S-Left> <Left>")
-vim.cmd("vmap <S-Right> <Right>")
+
+-- sign column
+vim.opt.signcolumn = "yes"
+
+-- search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- indentation
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+
+-- scrolloff
+vim.opt.scrolloff = 20
+vim.opt.sidescrolloff = 20
+
+-- split
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+-- treesitter language overrides
+vim.treesitter.language.register("bash", "zsh")
