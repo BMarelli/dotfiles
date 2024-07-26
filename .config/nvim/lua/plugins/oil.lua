@@ -1,8 +1,8 @@
 return {
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
     },
 
     keys = {
@@ -20,6 +20,6 @@ return {
           return name == ".." or name == ".git"
         end,
       },
-    }
-  }
+    },
+  },
 }
