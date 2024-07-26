@@ -1,11 +1,6 @@
 local lsp = vim.g.lazyvim_python_lsp or "pyright"
 local ruff = vim.g.lazyvim_python_ruff or "ruff_lsp"
 
--- indentation
-vim.opt_local.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -101,5 +96,44 @@ return {
       opts.auto_brackets = opts.auto_brackets or {}
       table.insert(opts.auto_brackets, "python")
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        cs = { "isort", "black" },
+      },
+      formatters = {
+        isort = {
+          command = "isort",
+          args = { "--profile", "black" },
+        },
+        black = {
+          command = "black",
+          args = { "--quiet", "-" },
+        },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+
+        opts = function(_, opts)
+          opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, { "pylint" })
+        end,
+      },
+    },
+
+    opts = {
+      linters_by_ft = {
+        python = { "pylint" },
+      },
+    },
   },
 }
