@@ -108,7 +108,7 @@ alias vim="nvim"
 alias python="python3"
 
 # nvim
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 
